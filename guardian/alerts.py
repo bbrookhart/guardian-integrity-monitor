@@ -1,4 +1,4 @@
-<import time
+import time
 
 class AlertManager:
     def __init__(self, logfile="alerts.log"):
@@ -11,4 +11,4 @@ class AlertManager:
     def notify(self, message):
         print(f"[ALERT] {message}")
         self._write_log(message)
->
+
