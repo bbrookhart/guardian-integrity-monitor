@@ -15,4 +15,4 @@ python3 cli.py --scan
 python3 cli.py --watch
 ```
 
-## Perfect for GitHub portfolios!
+
