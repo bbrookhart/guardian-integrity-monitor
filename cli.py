@@ -1,23 +1,37 @@
-import argparse, json
-from file_watcher import FileWatcher
+import argparse
+import json
+
+from guardian.monitor import IntegrityMonitor
+from guardian.dashboard import Dashboard
+from guardian.gui import IntegrityGUI
 
 def load_config():
-    with open('config.json') as f:
+    with open("config.json") as f:
         return json.load(f)
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--scan', action='store_true', help='Run a one-time integrity check')
-    parser.add_argument('--watch', action='store_true', help='Monitor directories continuously')
-    args = parser.parse_args()
 
+    parser.add_argument("--scan", action="store_true", help="Run a one-time integrity check")
+    parser.add_argument("--watch", action="store_true", help="Continuously monitor directories")
+    parser.add_argument("--dashboard", action="store_true", help="Show console dashboard")
+    parser.add_argument("--gui", action="store_true", help="Launch GUI viewer")
+
+    args = parser.parse_args()
     config = load_config()
 
-    watcher = FileWatcher(config)
-    watcher.initial_scan()
+    monitor = IntegrityMonitor(config)
+
+    monitor.initial_index()
+
+    if args.dashboard:
+        Dashboard(config).list_files()
+
+    if args.gui:
+        IntegrityGUI(config).launch()
 
     if args.watch:
-        watcher.watch()
+        monitor.watch()
     else:
         print("Initial scan completed.")
 
