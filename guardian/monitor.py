@@ -34,4 +34,4 @@ class IntegrityMonitor:
                     self.alerts.notify(f"File deleted: {path}")
                     del self.cache[path]
             time.sleep(2)
-monitor_code>
+monitor_code
