@@ -1,4 +1,4 @@
-<import hashlib
+import hashlib
 import time
 
 class IntegrityCore:
@@ -18,4 +18,3 @@ class IntegrityCore:
     def log(self, message):
         with open(self.log_file, "a") as f:
             f.write(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] {message}\n")
->
