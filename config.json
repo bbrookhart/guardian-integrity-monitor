@@ -1,0 +1,7 @@
+{
+    "watch_directories": [
+        "./watched"
+    ],
+    "hash_algo": "sha256",
+    "log_file": "guardian.log"
+}
