@@ -1,8 +1,8 @@
-<import tkinter as tk
+import tkinter as tk
 from tkinter import ttk
 import os
-from integrity_core import IntegrityCore
 
+from guardian.integrity_core import IntegrityCore
 class IntegrityGUI:
     def __init__(self, config):
         self.core = IntegrityCore(config)
@@ -34,4 +34,3 @@ class IntegrityGUI:
 
     def launch(self):
         self.window.mainloop()
->
