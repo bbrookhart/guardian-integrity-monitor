@@ -1,9 +1,9 @@
 import json
 import os
 import time
-from integrity_core import IntegrityCore
-from alerts import AlertManager
 
+from guardian.integrity_core import IntegrityCore
+from guardian.alerts import AlertManager
 class IntegrityMonitor:
     def __init__(self, config):
         self.core = IntegrityCore(config)
