@@ -1,5 +1,5 @@
-<import os
-from integrity_core import IntegrityCore
+import os
+from guardian.integrity_core import IntegrityCore
 
 class Dashboard:
     def __init__(self, config):
@@ -15,4 +15,3 @@ class Dashboard:
                     path = os.path.join(root, f)
                     sig = self.core.hash_file(path)
                     print(f"  {path}  |  hash: {sig[:12]}...")
->
