@@ -1,4 +1,4 @@
-<class VirusTotalClient:
+class VirusTotalClient:
     """
     Safe placeholder for VirusTotal integration.
     This module does NOT perform any scanning or remote lookups.
@@ -15,4 +15,4 @@
             "found": False,
             "message": "VirusTotal lookup disabled in demo mode."
         }
->
+
