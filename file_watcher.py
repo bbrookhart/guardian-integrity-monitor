@@ -1,10 +1,11 @@
-import os, time
-from integrity_core import IntegrityCore
+import os
+import time
+from guardian.integrity_core import IntegrityCore
 
 class FileWatcher:
     def __init__(self, config):
         self.core = IntegrityCore(config)
-        self.watch_dirs = config['watch_directories']
+        self.watch_dirs = config["watch_directories"]
         self.cache = {}
 
     def initial_scan(self):
